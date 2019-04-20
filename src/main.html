@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Screenshot App</title>
+
+    <link rel="stylesheet" href="../node_modules/bulma/css/bulma.css">
+    <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="main.css">
+
+    <script type="module">
+      require('./webComponents/screenShot')
+    </script>
+
+  </head>
+  <body>
+    <header id="app-header" class="has-text-white is-uppercase has-text-weight-bold">
+      <div class="level">
+        <div class="level-left">
+          <div class="level-item">
+            LOGO
+          </div>
+        </div>
+        <div class="level-right">
+          <div class="level-item">
+            <div id="scanWebsite" class="is-hover is-unselectable has-text-centered">
+              <div class="fab fa-inverse fa-lg fa-searchengin"></div>
+              <p>Scan</p>
+            </div>
+          </div>
+          <div class="level-item">
+            <div id="saveProject" class="is-hover is-unselectable has-text-centered">
+              <div class="fas fa-inverse fa-lg fa-save"></div>
+              <p>Save</p>
+            </div>
+          </div>
+          <div class="level-item">
+            <div id="renderScreenshots" class="is-hover is-unselectable has-text-centered">
+              <div class="fas fa-inverse fa-lg fa-camera"></div>
+              <p>Capture</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div id="app-body">
+      <section id="app-projects">
+        <ul>
+          <li class="active">Demo Project</li>
+          <li>Title 2</li>
+        </ul>
+        <header>
+          <div class="level">
+            <div class="level-item">
+              <div id="newProject" class="is-hover is-unselectable has-text-centered">
+                <div class="fas fa-inverse fa-lg fa-plus-circle"></div>
+                <p>New</p>
+              </div>
+            </div>
+            <div class="level-item">
+              <div id="importProject" class="is-hover is-unselectable has-text-centered">
+                <div class="fas fa-inverse fa-lg fa-file-import"></div>
+                <p>Import</p>
+              </div>
+            </div>
+            <div class="level-item">
+              <div id="exportProject" class="is-hover is-unselectable has-text-centered">
+                <div class="fas fa-inverse fa-lg fa-file-export"></div>
+                <p>Export</p>
+              </div>
+            </div>
+          </div>
+        </header>
+      </section>
+      <section id="project-content">
+        <div class="d-sticky">
+          <div class="level">
+            <h1>Project Settings</h1>
+          </div>
+        </div>
+        <section id="project-settings">
+          <div class="columns">
+            <div class="column">
+              <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                  <label class="label">Title</label>
+                </div>
+                <div class="field-body">
+                  <div class="field">
+                    <p class="control is-expanded">
+                      <input id="project_title" class="input" type="text" placeholder="Add Title" value="">
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                  <label class="label">Name</label>
+                </div>
+                <div class="field-body">
+                  <div class="field">
+                    <p class="control is-expanded">
+                      <input id="file_name" class="input" type="text" placeholder="Add File Name" value="">
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="columns">
+                <div class="has-text-centered column">
+                  <div class="fas fa-2x fa-desktop"></div>
+                  <input id="default_desktop" class="has-text-centered input is-static" type="text" value="1280px">
+                </div>
+                <div class="has-text-centered column">
+                  <div class="fas fa-2x fa-tablet-alt"></div>
+                  <input id="default_tablet" class="has-text-centered input is-static" type="text" value="768px">
+                </div>
+                <div class="has-text-centered column">
+                  <div class="fas fa-2x fa-mobile-alt"></div>
+                  <input id="default_mobile" class="has-text-centered input is-static" type="text" value="320px">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="columns">
+            <div class="column">
+              <div class="field">
+                <div class="control">
+                  <label class="checkbox">
+                    <input id="include_meta" type="checkbox">
+                    Include meta globally
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="field">
+                <div class="control">
+                  <label class="checkbox">
+                    <input id="include_margin" type="checkbox">
+                    Include margins globally
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="columns">
+            <div class="column">
+              <div class="field">
+                <label class="label">Add Global CSS</label>
+                <div class="control">
+                  <textarea class="textarea" placeholder=".classname{property:value;}"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="field">
+                <label class="label">Add Global JS</label>
+                <div class="control">
+                  <textarea class="textarea" placeholder="function(){console.log('test')}"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="has-background-light has-text-centered">
+            Collapse Options
+          </div>
+        </section>
+
+        <div class="d-sticky">
+          <div class="level">
+            <div class="level-left">
+              <h1>Screenshot List</h1>
+            </div>
+            <div class="level-right">
+              <div class="field is-grouped is-grouped-multiline">
+                <div class="control">
+                  <div class="tags has-addons">
+                    <span class="tag">Screenshots</span>
+                    <span class="tag is-dark">1</span>
+                  </div>
+                </div>
+                <div class="control">
+                  <div class="tags has-addons">
+                    <span class="tag">Status</span>
+                    <span class="tag is-success">Ready</span>
+                  </div>
+                </div>
+                <div class="control">
+                  <div class="tags has-addons">
+                    <span class="tag">Saved</span>
+                    <span class="tag is-success">02/18/19 12:00pm</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <ul id="project-shots">
+          <screen-shot class="is-active is-empty"></screen-shot>
+          <screen-shot class="is-active is-empty"></screen-shot>
+          <screen-shot class="is-active is-empty"></screen-shot>
+        </ul>
+        <div class="has-text-centered">
+          <h1>THE END</h1>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      // require('./app')
+      require('./getScreenshots')
+    </script>
+  </body>
+</html>

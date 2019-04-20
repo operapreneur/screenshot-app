@@ -1,0 +1,124 @@
+::selection { background: yellow; }
+
+html, body {
+  -webkit-app-region: no-drag;
+  overflow: hidden;
+  color: #0d0d0d;
+}
+
+#app-header {
+  -webkit-app-region: drag;
+  background-color: #30478c;
+  width: 100%;
+  height: 85px;
+}
+#app-header .is-hover {
+  -webkit-app-region: no-drag;
+  cursor: pointer;
+  position: relative;
+  z-index: 99;
+}
+
+#app-body {
+  width: 100%;
+  display: flex;
+  height: calc(100vh - 85px);
+}
+
+.d-sticky {
+  background: #d9d9d9;
+  position: sticky;
+  top:0;
+  min-height: 32px;
+  z-index: 1000;
+}
+
+#app-projects {
+  position: relative;
+  background-color: #4563bf;
+  color: #fff;
+  width: 33%;
+  min-width: 250px;
+  max-width: 320px;
+  overflow-y: scroll;
+}
+#app-projects header {
+  background: #30478c;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 0.6rem 0;
+}
+#app-projects ul {
+
+}
+#app-projects li {
+  border-bottom: 1px solid #d9d9d9;
+  padding: 0.5rem 1rem;
+}
+#app-projects li.active {
+  background-color: #5c73f2;
+  border-bottom: 3px solid #d9d9d9;
+}
+
+#project-content {
+  background-color: #d9d9d9;
+  width: -webkit-fill-available;
+  padding: 0 2rem;
+  overflow-y: scroll;
+}
+#project-settings,
+screen-shot {
+  background: #fff;
+  border-radius: 5px;
+  width: 100%;
+  min-height: 50px;
+}
+#project-settings{
+  min-height: 75px;
+  margin-bottom: 2rem;
+  padding: 0.6rem 1rem;
+}
+
+#project-content h1 {
+  font-weight: bold;
+  font-weight: 900;
+  text-transform: uppercase;
+  opacity: 0.75;
+  margin: 0.6rem 0;
+}
+
+#project-shots {
+  margin: 0 2rem;
+}
+screen-shot {
+  display: flex;
+  align-items: center;
+  margin: 0 auto 1rem;
+  padding: 0.6rem 1rem;
+  max-width: 900px;
+}
+screen-shot:last-child {
+  margin-bottom: 0;
+}
+screen-shot article {width: 100%;}
+screen-shot header {
+  position: relative;
+}
+screen-shot header .fa-plus {
+  position: absolute;
+  left: -55px;
+  top: -12px;
+  padding: 16px 12px;
+}
+screen-shot.is-empty header {
+  font-style: italic;
+}
+#project-shots #delete-shot,
+screen-shot.is-active.is-empty #delete-shot {opacity: .25;}
+screen-shot.is-active.is-empty {border-color:#e5e5e5;}
+screen-shot.is-active {
+  border-color: #bc0000;
+}
+screen-shot.is-active #add-shot{color: #bc0000;}
+screen-shot.is-active #delete-shot{opacity: 1;}
