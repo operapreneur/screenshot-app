@@ -33,7 +33,7 @@ module.exports = (url, callback) => {
 
       let screenshot = img.toPNG()
 
-      fs.writeFile(`/Users/joel.herold/www/__Area23/screenshot-app/src/tmp/screenshot${i}.png`, screenshot, (err) => {
+      fs.writeFile(`${__dirname}/tmp/screenshot${i}.png`, screenshot, (err) => {
         if (err) throw err;
         console.log('The file has been saved!');
       });

@@ -7,6 +7,7 @@ const xtend = require("xtend")
 
 // variables
 let winObject = []
+const desktopDirectory = require('path').join(require('os').homedir(), 'Desktop')
 
 const newError = (page, method, type, desc) => {
   // TODO Create table output for error report
@@ -220,7 +221,14 @@ const renderScreenshot = (settings, screenshot, i, win, pageContents, rectObj) =
 
 // writeFile
 const createFile = (settings, screenshot, i, screenImg) => {
-  fs.writeFile(`${settings.file_path}${settings.file_name}_${i}.png`, screenImg, (err) => {
+  let settingsPath = settings.file_path;
+  let defaultPath = desktopDirectory + '/temp/';
+
+  if (!fs.existsSync(defaultPath)){
+    fs.mkdirSync(defaultPath);
+  }
+
+  fs.writeFile(`${defaultPath}${settings.file_name}_${i}.png`, screenImg, (err) => {
     if (err) throw err;
     console.log('The file has been saved!');
   });

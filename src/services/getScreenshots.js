@@ -4,14 +4,11 @@ const {ipcRenderer} = require('electron')
 
 
 // EXAMPLE Project
-const shotObject = require('./project-demo/ProjectObject.json')
+const shotObject = require('./../../project-demo/ProjectObject.json')
 
-
-// Listen for Screenshot READY
-renderScreenshots.addEventListener('click', passShotList);
 
 // Get and send object
-function passShotList() {
+module.exports = function passShotList() {
 
   // Get Project Object
   // let shotList = JSON.parse(shotObject)

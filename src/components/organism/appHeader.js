@@ -1,3 +1,6 @@
+const passShotList = require('./../../services/getScreenshots.js')
+const scanWebsite = require('./../../services/scanWebsite.js')
+
 class AppHeader extends HTMLElement {
   constructor() {
     super()
@@ -33,6 +36,15 @@ class AppHeader extends HTMLElement {
       </header>
     `;
   }
+
+  connectedCallback() {
+    const el = document.getElementById('scanWebsite');
+    el.addEventListener('click', scanWebsite)
+
+    const renderScreenshots = document.getElementById('renderScreenshots')
+    renderScreenshots.addEventListener('click', passShotList);
+  }
+
 }
 
 customElements.define('app-header', AppHeader)
