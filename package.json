@@ -4,7 +4,8 @@
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "cross-env ELECTRON_ENV=dev electron .",
+    "test": "electron ."
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -19,6 +20,7 @@
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.7.2",
     "bcrypt": "^3.0.6",
+    "cross-env": "^5.2.0",
     "devtron": "^1.4.0",
     "electron": "^4.1.4",
     "electron-reload": "^1.4.0"

@@ -4,7 +4,7 @@ const {ipcRenderer} = require('electron')
 
 
 // EXAMPLE Project
-const shotObject = require('./ProjectObject.json')
+const shotObject = require('./project-demo/ProjectObject.json')
 
 
 // Listen for Screenshot READY
