@@ -44,9 +44,14 @@ exports.createWindow = () => {
     // Devtools
     this.win.webContents.openDevTools({ mode: 'detach' })
   }
-  
+
   // Load main window content
-  this.win.loadURL(`file://${__dirname}/src/main.html`)
+  let url = require('url').format({
+    protocol: 'file',
+    slashes: true,
+    pathname: require('path').join(__dirname, '..', 'main.html')
+  })
+  this.win.loadURL(url)
 
   // Handle window closed
   this.win.on('closed', () => {

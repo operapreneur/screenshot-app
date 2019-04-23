@@ -1,10 +1,12 @@
 // Modules
 const {app, ipcMain} = require('electron')
-const windowMain = require('./windowMain')
-const renderPages = require('./renderPages')
+const windowMain = require('./processMain/windowMain')
+const renderPages = require('./processMain/renderPages')
 
 // Enable Electron-Reload
-require('electron-reload')(__dirname)
+if ( process.env.ELECTRON_ENV === "dev" ) {
+  require('electron-reload')(__dirname)
+}
 
 //https://electronjs.org/docs/api/app#appsetbadgecountcount-linux-macos
 app.setBadgeCount(15)

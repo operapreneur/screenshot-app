@@ -1,7 +1,7 @@
 
 // Modules
 const {ipcRenderer} = require('electron')
-const items = require('./items.js')
+const items = require('./projects.js')
 
 // Listen for click/enter with URL
 let addShot = document.getElementById('add-shot');

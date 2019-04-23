@@ -1,11 +1,16 @@
+
+const {addProject} = require('./../../services/projects.js')
+
 class AppProjects extends HTMLElement {
   constructor() {
     super()
+
+  }
+  connectedCallback() {
     this.innerHTML = `
       <section id="app-projects">
-        <ul>
-          <li class="active">Demo Project</li>
-          <li>Title 2</li>
+        <ul id="project-list">
+          <li id="no-projects"><em>No Projects</em></li>
         </ul>
         <header>
           <div class="level">
@@ -31,6 +36,12 @@ class AppProjects extends HTMLElement {
         </header>
       </section>
     `;
+
+    const newProject = document.getElementById('newProject')
+    newProject.addEventListener('click', () => {
+      addProject();
+    })
+
   }
 }
 
