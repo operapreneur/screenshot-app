@@ -19,6 +19,10 @@
 - https://github.com/juliangruber/capture-electron
 
 
+# Save App data
+- https://github.com/electron/electron/blob/master/docs/api/app.md#appgetpathname
+
+
 # Page list
 - Add
 - Remove

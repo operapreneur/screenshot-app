@@ -40,8 +40,8 @@ exports.createWindow = () => {
   // Manages Main Window State
   windowMainState.manage(this.win);
 
+  // Devtools
   if ( process.env.ELECTRON_ENV === "dev" ) {
-    // Devtools
     this.win.webContents.openDevTools({ mode: 'detach' })
   }
 

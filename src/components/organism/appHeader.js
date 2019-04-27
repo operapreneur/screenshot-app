@@ -1,4 +1,4 @@
-const passShotList = require('./../../services/getScreenshots.js')
+const passShotList = require('./../../processRender/getScreenshots.js')
 const scanWebsite = require('./../../services/scanWebsite.js')
 
 class AppHeader extends HTMLElement {

@@ -1,33 +1,22 @@
 
 // Modules
 const {ipcRenderer} = require('electron')
-const crypto = require('crypto');
 
 
 // EXAMPLE Project
 const shotObject = require('./../../project-demo/ProjectObject.json')
 
-
 // Track items with array
-exports.toreadItems = JSON.parse(localStorage.getItem('toreadItems')) || []
+exports.getProjectList = JSON.parse(localStorage.getItem('projectList')) || []
 
 // Save project to localstorage
-exports.saveProject = () => {
-  localStorage.setItem('toreadItems', JSON.stringify(this.toreadItems))
+exports.setProjectList = () => {
+  localStorage.setItem('projectList', JSON.stringify(this.getProjectList))
 }
 
-// Add new Project
-exports.addProject = () => {
-
-  // Update UI
+// Add Project
+exports.addProject = (projectID) => {
   document.getElementById('no-projects').classList.add('is-hidden');
-
-  // console.log(shotObject);
-  let projectID = `project-${crypto.randomBytes(5).toString('hex')}`
-
-  // New project html
   let projectHTML = `<li class="active">${projectID}</li>`
-
-  // Apppend
   document.getElementById("project-list").insertAdjacentHTML('beforeend', projectHTML)
 }

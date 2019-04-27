@@ -1,5 +1,6 @@
 
-const {addProject} = require('./../../services/projects.js')
+const {addNewProject} = require('./../../processRender/manageProjects')
+const projects = require('./../../services/projects')
 
 class AppProjects extends HTMLElement {
   constructor() {
@@ -37,10 +38,15 @@ class AppProjects extends HTMLElement {
       </section>
     `;
 
+    //Add Listener
     const newProject = document.getElementById('newProject')
     newProject.addEventListener('click', () => {
-      addProject();
+      addNewProject();
     })
+
+    // Add projects when app loads
+    if(projects.getProjectList.length)
+      projects.getProjectList.forEach(projects.addProject)
 
   }
 }
