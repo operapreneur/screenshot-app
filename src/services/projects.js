@@ -17,6 +17,16 @@ exports.setProjectList = () => {
 // Add Project
 exports.addProject = (projectID) => {
   document.getElementById('no-projects').classList.add('is-hidden');
-  let projectHTML = `<li class="active">${projectID}</li>`
+  let items = document.querySelectorAll('.project-item');
+  if (items.length > 0) {
+    items.forEach(function(i) {
+      if (i.classList.contains('active')) {
+        i.classList.remove('active');
+      }
+    })
+  }
+  let projectHTML = `<li id="${projectID}" class="project-item active" draggable="true">
+                        ${projectID}
+                      </li>`
   document.getElementById("project-list").insertAdjacentHTML('beforeend', projectHTML)
 }

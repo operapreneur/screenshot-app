@@ -64,6 +64,9 @@ app-projects {
   background-color: #5c73f2;
   border-bottom: 3px solid #d9d9d9;
 }
+#app-projects li.over {
+  border-top: 10px solid #fff;
+}
 
 .modal {
   z-index: 1000;
