@@ -1,6 +1,5 @@
-
-const {addNewProject} = require('./../../processRender/manageProjects')
 const projects = require('./../../services/projects')
+const modal = require('./modalNewProject')
 
 class AppProjects extends HTMLElement {
   constructor() {
