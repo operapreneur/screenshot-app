@@ -34,6 +34,9 @@
 
 
 # Save as PDF
+- Puppeteer has more options and will emulateMedia to `screen` overriding the print css media
+  - https://pptr.dev/#?product=Puppeteer&version=v1.13.0&show=api-pagepdfoptions
+  - `page.emulateMedia('screen')`
 - printToPDF: https://electronjs.org/docs/api/web-contents#contentsprinttopdfoptions-callback
 - https://www.npmjs.com/package/electron-pdf
 - https://stackoverflow.com/questions/32716556/remove-css-media-print-rules-without-modifying-css-files
